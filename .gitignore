@@ -1,2 +1,4 @@
 /node_modules
 yarn.lock
+/dev_dist
+/production_dist
