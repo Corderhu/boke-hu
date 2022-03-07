@@ -1,12 +1,30 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <router-view />
   </div>
 </template>
+<script>
+export default {
+  mounted() {
+    this._isMobile()
+  },
+  methods: {
+    // 判断是移动端还是web端，进入不同的页面
+    _isMobile() {
+      let flag = navigator.userAgent.match(
+        /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i
+      )
+      if (flag) {
+        // 移动端
+        this.$router.replace("/m_index")
+      } else {
+        // web端
+        this.$router.replace("/pc_index")
+      }
+    },
+  },
+}
+</script>
 
 <style lang="scss">
 #app {
