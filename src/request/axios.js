@@ -41,7 +41,7 @@ instance.interceptors.response.use((response) => {
             newInstanceArr.forEach((element) => {
               element()
             })
-            // 清空
+            // 清空数组，避免
             newInstanceArr = []
           }
         })
@@ -52,6 +52,7 @@ instance.interceptors.response.use((response) => {
           refreshToken = false //重新归正，下次刷新
         })
     }
+    // token 过期的保存在数组中，暂不执行resolve、就会一直处于pending状态；
     return new Promise((resolve) => {
       newInstanceArr.push(() => {
         resolve(instance(response.config))
