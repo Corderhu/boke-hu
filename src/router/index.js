@@ -1,6 +1,7 @@
 import Vue from "vue"
 import VueRouter from "vue-router"
-
+import mRoute from './m/index'
+import pcRoute from './pc/index'
 Vue.use(VueRouter)
 
 const routes = [{
@@ -20,7 +21,13 @@ const routes = [{
             import ("@/views/m_vue/m_index.vue"),
     },
 ]
-
+// 放进去路由
+mRoute.forEach(element => {
+    routes.push(element)
+});
+pcRoute.forEach(element => {
+    routes.push(element)
+});
 const router = new VueRouter({
     mode: "history",
     base: process.env.BASE_URL,
