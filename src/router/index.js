@@ -5,7 +5,7 @@ import pcRoute from './pc/index'
 Vue.use(VueRouter)
 
 const routes = [{
-        path: "",
+        path: "/",
         redirect: "/pc_index",
     },
     {
@@ -21,7 +21,7 @@ const routes = [{
             import ("@/views/m_vue/m_index.vue"),
     },
 ]
-// 放进去路由
+// web与移动端都放进去路由，可以实现互通
 mRoute.forEach(element => {
     routes.push(element)
 });
