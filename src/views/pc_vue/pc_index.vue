@@ -1,8 +1,15 @@
 <template>
-  <div class="pc">web端 李双双是憨熊</div>
+  <div class="pc">
+    <Navbar></Navbar>
+    web端 李双双是憨熊
+  </div>
 </template>
 <script>
+import Navbar from "@/components/common/pc/indexNavBar.vue" 
 export default {
+  components:{
+    Navbar,
+  },
   created() {},
   mounted() {
     //在移动端与web首页判定避免一直app.vue中一直触发(只在首页第一次触发，在网页中输入网址不会一直处在首页)
