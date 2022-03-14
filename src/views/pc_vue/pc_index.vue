@@ -1,7 +1,7 @@
 <template>
   <div class="pc">
     <Navbar></Navbar>
-    web端 李双双是憨熊
+    <router-view></router-view>
   </div>
 </template>
 <script>

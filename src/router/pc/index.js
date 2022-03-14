@@ -1,10 +1,11 @@
 // web端路由配置
 const pcRoute = [
     {
-        path: "/pc_index/2", // pc端首页
-        name: "2",
+        path: "index", // pc端首页
+        name: "index",
+        title:"首页",
         component: () =>
-            import("@/views/pc_vue/2.vue"),
+            import("@/views/pc_vue/index/index.vue"),
     }
 ]
 export default pcRoute
