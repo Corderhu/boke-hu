@@ -25,10 +25,13 @@ export default {
         // 移动端
         this.$router.replace("/m_index")
       } 
-      // else {
-      //   // web端
-      //   this.$router.replace("/pc_index")
-      // }
+      else {
+        // web端
+        if(this.$route.name != 'index'){
+          this.$router.replace("/pc_index/index")
+        }
+        
+      }
     },
   },
 }
