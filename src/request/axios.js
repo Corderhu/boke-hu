@@ -4,6 +4,7 @@ import axios from "axios"
 const instance = axios.create({
   baseURL: config.baseurl,
   timeout: 10000, // 10秒请求超时
+  withCredentials:true,
   headers: {
     "content-type": "application/json",
   },

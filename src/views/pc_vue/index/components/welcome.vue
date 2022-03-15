@@ -21,10 +21,27 @@
     </div>
     <div class="content">
       <div class="news">
-
+        <div class="title">最新动态</div>
+        <div class="cat">
+          <div class="item" v-for="item in 3" :key="item">
+            <img class="header" />
+            <div class="show"></div>
+            <div class="opera"></div>
+          </div>
+        </div>
       </div>
       <div class="tianqi">
-        
+        <div class="title">日历天气</div>
+        <div class="whether">
+          <iframe
+            allowtransparency="true"
+            frameborder="0"
+            width="390"
+            height="96"
+            scrolling="no"
+            src="//tianqi.2345.com/plugin/widget/index.htm?s=2&z=2&t=0&v=0&d=2&bd=0&k=&f=ffffff&ltf=009944&htf=cc0000&q=1&e=0&a=1&c=58027&w=290&h=96&align=left"
+          ></iframe>
+        </div>
       </div>
     </div>
   </div>
@@ -32,15 +49,16 @@
 <script>
 export default {
   data() {
-    return {};
+    return {}
   },
-};
+  mounted() {},
+}
 </script>
 <style lang="scss" scoped>
 .welcome {
   padding-left: 368px;
   padding-top: 6px;
-  padding-right: 300px;
+  padding-right: 365px;
   .img {
     width: 284px;
     height: 543px;
@@ -48,7 +66,7 @@ export default {
   }
   .text {
     display: inline-block;
-    margin-left: 66px;
+    margin-left: 55px;
     padding-top: 152px;
     .weight {
       font-size: 60px;
@@ -73,6 +91,49 @@ export default {
       font-weight: 400;
       color: #000000;
       line-height: 28px;
+    }
+  }
+  .content {
+    display: flex;
+    margin-top: 86px;
+    .news {
+      width: 800px;
+      margin-right: 16px;
+      .cat {
+        margin-top: 12px;
+        .item {
+          padding: 12px 0 16px 0;
+          position: relative;
+          cursor: pointer;
+          .header {
+            width: 84px;
+            height: 84px;
+            background: #2e2a2a;
+            border-radius: 14px;
+            // border: 1px solid #979797;
+          }
+        }
+      }
+    }
+    .tianqi {
+      width: 334px;
+      height: 338px;
+      // background: #d8d8d8;
+      // background: #1b7db4;
+      overflow: hidden;
+      .whether {
+        margin-top: 10px;
+        background: #1b7db4;
+        height: 100%;
+        // background-color: rgb(15, 43, 197);
+      }
+    }
+    .title {
+      font-size: 28px;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: #000000;
+      line-height: 40px;
     }
   }
 }
