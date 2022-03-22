@@ -39,6 +39,7 @@
   }
 }
 
+// 使用主题的class 或者 标签在这里公共修改
 body{
    //在此使用了背景颜色变量
    @include background_color("background_color");
