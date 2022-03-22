@@ -13,7 +13,7 @@ export default {
   created() {},
   mounted() {
     //在移动端与web首页判定避免一直app.vue中一直触发(只在首页第一次触发，在网页中输入网址不会一直处在首页)
-    this._isMobile()
+    // this._isMobile()
   },
   methods: {
      // 判断是移动端还是web端，进入不同的页面

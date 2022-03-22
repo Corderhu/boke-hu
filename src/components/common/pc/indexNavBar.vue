@@ -1,24 +1,11 @@
 <template>
   <div class="navbar">
-    <div class="left"></div>
-    <div class="center">
-      <img class="label" src="@/assets/index/label.png" >
-      <a :class="tab == 0 ? 'active' : 'item'" @click="changeTab(0)"
-        ><span>首页</span></a
-      >
-      <a :class="tab == 1 ? 'active' : 'item'" @click="changeTab(1)"
-        ><span>前端</span></a
-      >
-      <a :class="tab == 2 ? 'active' : 'item'" @click="changeTab(2)"
-        ><span>说说</span></a
-      >
-      <a :class="tab == 3 ? 'active' : 'item'" @click="changeTab(3)"
-        ><span>关于</span></a
-      >
-    </div>
-    <div class="right">
-      <i class="el-icon-search" ></i>
-      <i class="el-icon-s-unfold"></i>
+    <div class="content">
+      <div class="name">sss</div>
+      <div class="tab"></div>
+      <div class="right">[ 
+        <router-link to="/">切换主题</router-link> 
+      ]</div>
     </div>
   </div>
 </template>
@@ -26,54 +13,39 @@
 export default {
   data() {
     return {
-      tab: 0,
+      showSelect:false
+      // tab: 0,
     }
   },
   methods: {
-    changeTab(num) {
-      this.tab = num
-    },
+    // changeTab(num) {
+    //   this.tab = num
+    // },
   },
 }
 </script>
 <style lang="scss" scoped>
 .navbar {
+  position: fixed;
+  top: 0;
   width: 100%;
-  height: 30px;
-  min-width: 1200px;
+  height: 60px;
   background-color: #000;
   color: #fff;
-  display: flex;
-  line-height: 30px;
-  font-size: 12px;
-  .left {
-    width: 368px;
+  &::before{
+    background: linear-gradient(to right, #ee0808, #e45f06, #ecd508, #08eb08, #0a5de2, #3209c7, #9b09f0);
+    content: "";
+    height: 3px;
+    position: absolute;
+    top: 0;
+    width: 100%;
   }
-  .center {
-    width: calc(100% - 736px);
-    min-width: 600px;
-    .label{
-      height:25px;
-      vertical-align: middle;
-      margin-right:15px;
-    }
-    .item {
-      display: inline-block;
-      min-width: 84px;
-       text-align: center;
-    }
-    .active {
-       display: inline-block;
-      min-width: 84px;
-      height: 30px;
-      text-align: center;
-      background: rgba(216, 216, 216, 0.5);
-    }
-  }
-  .right {
-    width: 368px;
-    .el-icon-search{
-      margin-right:30px
+  // padding: 10px;
+  .content {
+    line-height: 60px;
+    display: flex;
+    .right{
+      float: right;
     }
   }
 }

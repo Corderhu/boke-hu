@@ -1,4 +1,4 @@
-const baseSize = 16
+// const baseSize = 16
 // 设置 rem 函数
 // 页面以1920px 为最小基本，小则缩放
 function setRem() {
@@ -10,8 +10,8 @@ function setRem() {
     /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i
   )
   if (!flag) {
-    document.documentElement.style.fontSize =
-      baseSize * Math.min(scale, 2) + "px"
+    // document.documentElement.style.fontSize =
+    //   baseSize * Math.min(scale, 2) + "px"
 
     // if (scale < 1) {
     // 除了1920 全都要适配一下
@@ -20,7 +20,7 @@ function setRem() {
   }
 }
 // 初始化
-setRem()
+// setRem()
 // 改变窗口大小时重新设置 rem
 // window.onresize = function () {
 //   setRem()

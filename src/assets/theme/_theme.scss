@@ -1,0 +1,13 @@
+// 切换主题，使用这个颜色，可以切换
+$themes: (
+  light: (
+    background_color: #cccccc,//背景色
+    text-color: rgba(0, 0, 0, 1), // 主文本色
+    text-a:rgb(56, 211, 17),// a标签
+  ),
+  dark: (
+    background_color: #181c27,//背景
+    text-color: rgba(255, 255, 255, 1), // 主文本色
+    text-a:rgb(24, 9, 231),
+  )
+);
