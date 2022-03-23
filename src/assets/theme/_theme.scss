@@ -1,13 +1,29 @@
 // 切换主题，使用这个颜色，可以切换
+// 自定义主题颜色
+$byMyself_background_color: #181c27 !default;
+$byMyself_text-color: #181c27 !default;
+$byMyself_text-a: #181c27 !default;
 $themes: (
   light: (
-    background_color: #cccccc,//背景色
-    text-color: rgba(0, 0, 0, 1), // 主文本色
-    text-a:rgb(56, 211, 17),// a标签
+    background_color: #cccccc,
+    //背景色
+    text-color: rgba(0, 0, 0, 1),
+    // 主文本色
+    text-a: rgb(56, 211, 17),
+    // a标签
   ),
   dark: (
-    background_color: #181c27,//背景
-    text-color: rgba(255, 255, 255, 1), // 主文本色
-    text-a:rgb(24, 9, 231),
-  )
+    background_color: #181c27,
+    //背景
+    text-color: rgba(255, 255, 255, 1),
+    // 主文本色
+    text-a: rgb(24, 9, 231),
+  ),
+  byMyself: (
+    background_color: $byMyself_background_color,
+    //背景
+    text-color: $byMyself_text-color,
+    // 主文本色
+    text-a: $byMyself_text-a,
+  ),
 );

@@ -1,0 +1,13 @@
+@import './handle.scss';
+// 使用主题的class 或者 标签在这里公共修改
+body{
+  
+  //在此使用了背景颜色变量
+  @include background_color("background_color");
+  //再次使用了文字颜色变量
+  @include font_color("text-color");
+  a{
+   @include a_color("text-a")
+  }
+  
+}

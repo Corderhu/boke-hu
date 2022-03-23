@@ -4,7 +4,7 @@
       <div class="name">sss</div>
       <div class="tab"></div>
       <div class="right">[ 
-        <router-link to="/">切换主题</router-link> 
+        <router-link to="/pc_index/themeSetting">切换主题</router-link> 
       ]</div>
     </div>
   </div>
