@@ -1,6 +1,6 @@
 <template>
   <div class="index">
-    <!-- <Welcome></Welcome> -->
+    <Welcome></Welcome>
     <!-- 主要内容 -->
     <div class="content" v-if="!isSetting">
       <div class="left">22121</div>

@@ -11,10 +11,15 @@
         <el-button type="primary" style="width: 100px" @click="changeTheme(el.type)">使用</el-button>
       </div>
     </div>
+    <settings ref="setting"/>
   </div>
 </template>
 <script>
+import settings from './components/settings.vue'
 export default {
+  components:{
+    settings,
+  },
   data() {
     return {
       theme: [
@@ -31,7 +36,8 @@ export default {
         window.document.documentElement.setAttribute( "data-theme", type );
       }else{
         // 自定义主题设置
-        window.document.documentElement.setAttribute( "data-theme", type );
+        this.$refs.setting.init()
+        // window.document.documentElement.setAttribute( "data-theme", type );
       }
     }
   },

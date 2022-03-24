@@ -9,6 +9,7 @@ const postcss = px2rem({
 })
 module.exports = {
   lintOnSave: true,
+
   css: {
     loaderOptions: {
       postcss: {
