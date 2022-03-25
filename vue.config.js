@@ -13,18 +13,30 @@ module.exports = {
   css: {
     loaderOptions: {
       postcss: {
-        plugins: [
-          postcss
-        ]
-      }
-    }
+        plugins: [postcss],
+      },
+    },
   },
+  // 正式包：测试包，方便区分
   outputDir:
-    process.env.NODE_ENV === "production" ? "./production_dist" : "./dev_dist", // 正式包：测试包，方便区分
+    process.env.NODE_ENV === "production" ? "./production_dist" : "./dev_dist",
   assetsDir: "static",
   indexPath: "index.html",
   devServer: {
-    host: "0.0.0.0",
+    host: "192.168.0.128",
     port: 8686,
+    disableHostCheck: true,
+    https: false, //是否https
+    //显示警告和错误
+    overlay: {
+      warnings: false,
+      errors: true,
+    },
+    proxy: {
+      "/api/getIp": {
+        target: "http://pv.sohu.com/cityjson?ie=utf-8/",
+        changeOrigin: true,
+      },
+    },
   },
 }

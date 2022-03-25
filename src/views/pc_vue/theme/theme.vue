@@ -29,6 +29,13 @@ export default {
       ],
     }
   },
+  created() {
+    this.$get('/getIp').then((res)=>{
+      let start = res.indexOf("{")
+      let end = res.indexOf('}')  + 1
+      let data =JSON.parse (res.substring(start,end))
+    })
+  },
   methods: {
     changeTheme(type){
       if(type !== 'byMyself'){

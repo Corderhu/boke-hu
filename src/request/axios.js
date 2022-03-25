@@ -1,8 +1,8 @@
 import config from "@/config/index.js"
 import axios from "axios"
-
+import {Message} from 'element-ui'
 const instance = axios.create({
-  baseURL: config.baseurl,
+  baseURL: config.baseurl ,
   timeout: 10000, // 10秒请求超时
   withCredentials:true,
   headers: {
@@ -60,6 +60,11 @@ instance.interceptors.response.use((response) => {
       })
     })
   } else {
+    if(data.code != 200){
+      if(data.msg){
+         Message.error(data.msg)
+      }
+    }
     return data
   }
 })

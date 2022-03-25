@@ -9,7 +9,10 @@ import './utils/rem.js'
 import '@/assets/theme/common.scss'
 import '@/assets/theme/theme.js'
 
-import '@/request/axios.js'
+import {get,post,put} from '@/request/http.js'
+Vue.prototype.$get = get
+Vue.prototype.$put = put
+Vue.prototype.$post = post   
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 

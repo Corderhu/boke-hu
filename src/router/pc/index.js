@@ -7,7 +7,7 @@ const pcRoute = [
     component: () => import("@/views/pc_vue/index/index.vue"),
   },
   {
-    path: "themeSetting", // pc端首页
+    path: "themeSetting", // pc端主题设置
     name: "themeSetting",
     title: "主题设置",
     component: () => import("@/views/pc_vue/theme/theme.vue"),
