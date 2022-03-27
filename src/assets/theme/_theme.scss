@@ -1,8 +1,8 @@
 // 切换主题，使用这个颜色，可以切换
 // 自定义主题颜色
-$byMyself_background_color: #181c27 !default;
-$byMyself_text-color: #181c27 !default;
-$byMyself_text-a: #181c27 !default;
+$byMyself_background_color:var(--bgc,#181c27);
+$byMyself_text-color: var(--txc,#181c27);;
+$byMyself_text-a: var(--txa,#181c27);;
 $themes: (
   light: (
     background_color: #cccccc,

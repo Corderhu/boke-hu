@@ -23,10 +23,11 @@ module.exports = {
   assetsDir: "static",
   indexPath: "index.html",
   devServer: {
-    host: "192.168.0.128",
+    host: "0.0.0.0",
     port: 8686,
     disableHostCheck: true,
     https: false, //是否https
+    
     //显示警告和错误
     overlay: {
       warnings: false,
@@ -34,9 +35,15 @@ module.exports = {
     },
     proxy: {
       "/api/getIp": {
-        target: "http://pv.sohu.com/cityjson?ie=utf-8/",
+        target: "http://pv.sohu.com",
         changeOrigin: true,
+        pathRewrite:{
+          '^/api/getIp':'/cityjson?ie=utf-8/'
+        }
       },
+      // "/api/user":{
+      //   target:"http:192.168.0.102:8886"
+      // }
     },
   },
 }

@@ -8,16 +8,21 @@
     >
       {{ el.dec }}
       <div>
-        <el-button type="primary" style="width: 100px" @click="changeTheme(el.type)">使用</el-button>
+        <el-button
+          type="primary"
+          style="width: 100px"
+          @click="changeTheme(el.type)"
+          >使用</el-button
+        >
       </div>
     </div>
-    <settings ref="setting"/>
+    <settings ref="setting" />
   </div>
 </template>
 <script>
-import settings from './components/settings.vue'
+import settings from "./components/settings.vue";
 export default {
-  components:{
+  components: {
     settings,
   },
   data() {
@@ -27,28 +32,33 @@ export default {
         { type: "dark", dec: "夜晚主题" },
         { type: "byMyself", dec: "自定义主题" },
       ],
-    }
+    };
   },
   created() {
-    this.$get('/getIp').then((res)=>{
-      let start = res.indexOf("{")
-      let end = res.indexOf('}')  + 1
-      let data =JSON.parse (res.substring(start,end))
-    })
+    this.$get("/getIp").then((res) => {
+      let start = res.indexOf("{");
+      let end = res.indexOf("}") + 1;
+      let data = JSON.parse(res.substring(start, end));
+    });
   },
   methods: {
-    changeTheme(type){
-      if(type !== 'byMyself'){
+    changeTheme(type) {
+      if (type !== "byMyself") {
         // 初始化主题颜色
-        window.document.documentElement.setAttribute( "data-theme", type );
-      }else{
+        const obj = {
+          theme: type,
+        };
+        window.localStorage.setItem("data-theme", JSON.stringify(obj));
+
+        window.document.documentElement.setAttribute("data-theme", type);
+      } else {
         // 自定义主题设置
-        this.$refs.setting.init()
+        this.$refs.setting.init();
         // window.document.documentElement.setAttribute( "data-theme", type );
       }
-    }
+    },
   },
-}
+};
 </script>
 <style lang="scss" scoped>
 .theme {
