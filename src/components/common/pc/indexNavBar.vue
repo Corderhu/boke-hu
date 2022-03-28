@@ -3,12 +3,67 @@
     <div class="content">
       <div class="name"></div>
       <div class="tab">
-        <router-link class="item" to="/">博客首页</router-link>
-        <router-link class="item" to="/">生活情感</router-link>
-        <router-link class="item" to="/">博客推荐</router-link>
-        <router-link class="item" to="/">技术人生</router-link>
-        <router-link class="item" to="/">关于我</router-link>
-        <router-link class="item" to="/">留言</router-link>
+        <router-link
+          @mouseenter.native="mouseenter(0)"
+          @click.native="changeTab(0)"
+          class="item"
+          to="/"
+          icon="el-icon-search"
+          >博客首页<i
+            style="font-size: 8px"
+            :class="tab == 0 ? 'el-icon-arrow-down' : 'el-icon-arrow-right'"
+          ></i
+        ></router-link>
+        <router-link
+          @mouseenter.native="mouseenter(1)"
+          @click.native="changeTab(1)"
+          class="item"
+          to="/"
+          >生活情感<i
+            style="font-size: 8px"
+            :class="tab == 1 ? 'el-icon-arrow-down' : 'el-icon-arrow-right'"
+          ></i
+        ></router-link>
+        <router-link
+          @mouseenter.native="mouseenter(2)"
+          @click.native="changeTab(2)"
+          class="item"
+          to="/"
+          >博客推荐<i
+            style="font-size: 8px"
+            :class="tab == 2 ? 'el-icon-arrow-down' : 'el-icon-arrow-right'"
+          ></i
+        ></router-link>
+        <router-link
+          @mouseenter.native="mouseenter(3)"
+          @click.native="changeTab(3)"
+          class="item"
+          to="/"
+          >技术人生<i
+            style="font-size: 8px"
+            :class="tab == 3 ? 'el-icon-arrow-down' : 'el-icon-arrow-right'"
+          ></i
+        ></router-link>
+        <router-link
+          @mouseenter.native="mouseenter(4)"
+          @click.native="changeTab(4)"
+          class="item"
+          to="/"
+          >关于我<i
+            style="font-size: 8px"
+            :class="tab == 4 ? 'el-icon-arrow-down' : 'el-icon-arrow-right'"
+          ></i
+        ></router-link>
+        <router-link
+          @mouseenter.native="mouseenter(5)"
+          @click.native="changeTab(5)"
+          class="item"
+          to="/"
+          >留言<i
+            style="font-size: 8px"
+            :class="tab == 5 ? 'el-icon-arrow-down' : 'el-icon-arrow-right'"
+          ></i
+        ></router-link>
       </div>
       <div class="right">
         [
@@ -23,15 +78,22 @@ export default {
   data() {
     return {
       showSelect: false,
-      // tab: 0,
-    };
+      tab: 0,
+      mousePlace: 0,
+    }
   },
   methods: {
-    // changeTab(num) {
-    //   this.tab = num
-    // },
+    changeTab(num) {
+      this.tab = num
+    },
+    mouseenter(index) {
+      console.log("a")
+      if (index !== this.tab) {
+        // const dom
+      }
+    },
   },
-};
+}
 </script>
 <style lang="scss" scoped>
 .navbar {
@@ -76,6 +138,20 @@ export default {
         margin-left: 24px;
         letter-spacing: 1px;
         cursor: pointer;
+       
+      }
+      .yidong {
+         transition: All 0.2s ease-in-out;
+        -webkit-transition: All 0.3s ease-in-out;
+        -moz-transition: All 0.4s ease-in-out;
+        -o-transition: All 0.4s ease-in-out;
+        &{
+          transform: rotate(90deg);
+          -webkit-transform: rotate(90deg);
+          -moz-transform: rotate(90deg);
+          -o-transform: rotate(90deg);
+          -ms-transform: rotate(90deg);
+        }
       }
     }
   }
