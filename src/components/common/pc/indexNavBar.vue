@@ -140,19 +140,20 @@ export default {
         cursor: pointer;
        
       }
-      .yidong {
+      .el-icon-arrow-right {
          transition: All 0.2s ease-in-out;
         -webkit-transition: All 0.3s ease-in-out;
         -moz-transition: All 0.4s ease-in-out;
         -o-transition: All 0.4s ease-in-out;
-        &{
+        
+      }
+      .item:hover > .el-icon-arrow-right {
           transform: rotate(90deg);
           -webkit-transform: rotate(90deg);
           -moz-transform: rotate(90deg);
           -o-transform: rotate(90deg);
           -ms-transform: rotate(90deg);
         }
-      }
     }
   }
 }
